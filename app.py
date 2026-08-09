@@ -255,6 +255,17 @@ with tab_vid:
                            f"· {(i+1)/(time.time()-t0):.1f} FPS")
 
         writer.release()
+      # Convert MP4V output to H.264 for browser/Streamlit compatibility
+        h264_path = out_path.with_name(out_path.stem + "_h264.mp4")
+
+        os.system(
+        f'ffmpeg -y -i "{out_path}" '
+        f'-c:v libx264 -pix_fmt yuv420p -movflags +faststart '
+        f'"{h264_path}" > /dev/null 2>&1'
+    )
+
+        if h264_path.exists():
+          out_path = h264_path
         bar.progress(1.0)
         n_done = i + 1
 
