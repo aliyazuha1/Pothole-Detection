@@ -1,0 +1,15 @@
+# Streamlit Community Cloud runs on Linux CPU-only machines.
+# This extra index forces the ~200 MB CPU build of PyTorch instead of the
+# ~2.5 GB CUDA build, which would blow the free tier's resource limit.
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+torch==2.4.1+cpu
+torchvision==0.19.1+cpu
+
+streamlit>=1.36
+ultralytics==8.3.40
+opencv-python-headless>=4.9,<5
+numpy>=1.26,<2.2
+pandas>=2.0
+pillow>=10.0
+pyyaml>=6.0
