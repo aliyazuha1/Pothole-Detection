@@ -138,13 +138,7 @@ st.sidebar.write(f"**Classifier:** {'✅ pothole_classifier.pt' if classifier el
 
 # --------------------------------------------------------------------------- header
 st.title("🕳️ Pothole Detection and Counting")
-st.caption("MobileNetV2 screening → YOLOv8n detection → ByteTrack counting | "
-           "Image and Video Analytics (MDS507D-4)")
-
-if IS_CLOUD:
-    st.info("Running on Streamlit Community Cloud (CPU only). Video processing is slower here "
-            "than on a local machine — keep clips under ~30 seconds, or raise "
-            "*Process every Nth frame* in the sidebar.")
+st.caption("MobileNetV2 screening → YOLOv8n detection → ByteTrack counting  ")
 
 tab_img, tab_vid, tab_cam, tab_about = st.tabs(
     ["🖼️ Image", "🎬 Video", "📷 Live Webcam", "ℹ️ How it works"])
